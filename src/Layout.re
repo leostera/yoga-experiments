@@ -94,10 +94,13 @@ let make = (~width, ~height, children) => {
     | Reset => ReasonReact.Update({...state, phase: Loading})
     },
   render: self =>
-    <div style={Yoga.project(self.state.root, Style.make())}>
+    <div style={YogaBridge.project(self.state.root, Style.make())}>
       <nav
         style={
-          Yoga.project(self.state.nav.node, Style.make(~zIndex="1000", ()))
+          YogaBridge.project(
+            self.state.nav.node,
+            Style.make(~zIndex="1000", ()),
+          )
         }>
         <Button
           node={self.state.nav.buttons.reset.node}

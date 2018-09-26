@@ -31,3 +31,7 @@ bundle: deps
 .PHONY: clean
 clean: deps
 	@./node_modules/.bin/bsb -clean-world
+
+.PHONY: cleanall
+cleanall:
+	rm -rf ./node_modules ./lib

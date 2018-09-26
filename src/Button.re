@@ -25,7 +25,7 @@ let style =
 let make = (~node, ~mode, ~onClick, children) => {
   ...component,
   render: _self =>
-    <button style={Yoga.project(node, style(mode))} onClick>
+    <button style={YogaBridge.project(node, style(mode))} onClick>
       {ReasonReact.array(children)}
     </button>,
 };

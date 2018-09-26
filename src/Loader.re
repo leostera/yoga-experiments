@@ -30,7 +30,7 @@ let fullScreenNode = () =>
   });
 
 let textNode = (node, text) =>
-  <div style={Yoga.project(node, Style.make(~color="#eaeaea", ()))}>
+  <div style={YogaBridge.project(node, Style.make(~color="#eaeaea", ()))}>
     {ReasonReact.string(text)}
   </div>;
 
@@ -65,7 +65,7 @@ let make = (~width, ~height, ~phase, children) => {
   render: self =>
     <div
       style={
-        Yoga.project(
+        YogaBridge.project(
           self.state.node,
           Style.make(~backgroundColor="#403E48", ()),
         )
